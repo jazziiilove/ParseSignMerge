@@ -29,9 +29,6 @@ class Sign:
     def hello(self):
         print("init Sign")
 
-    def displayCount(self):
-        print("Total Employee %d" % Sign.empCount)
-
     def watermark(self):
         ipdf = PdfReader('1.pdf')
         wpdf = PdfReader('watermark.pdf')
