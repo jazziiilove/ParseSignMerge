@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../ParseSignMerge/.idea/PythonXPath.iml" filepath="$PROJECT_DIR$/../ParseSignMerge/.idea/PythonXPath.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ParseSignMerge.iml" filepath="$PROJECT_DIR$/.idea/ParseSignMerge.iml" />
+      <module fileurl="file://C:\Users\Baran.Topal\PycharmProjects\ParseSignMerge\.idea\PythonXPath.iml" filepath="C:\Users\Baran.Topal\PycharmProjects\ParseSignMerge\.idea\PythonXPath.iml" />
     </modules>
   </component>
 </project>

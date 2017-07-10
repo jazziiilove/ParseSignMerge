@@ -18,23 +18,30 @@ import json
 import os
 import pika
 from pdfrw import PdfReader, PdfWriter
+from receive import callback
 
 
 class Merge:
-    connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost'))
-    channel = connection.channel()
+    def receive(self, callback):
+        connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost'))
+        channel = connection.channel()
 
-    channel.queue_declare(queue='hello')
+        channel.queue_declare(queue='hello')
+        callback(channel, None, None, None)
 
-    def callback(ch, method, properties, body):
+
+    def callback(channel, method, properties, body):
+
         print(" [x] Received %r" % json.loads(body.decode()))
 
-    channel.basic_consume(callback,
-                          queue='hello',
-                          no_ack=True)
+        channel.basic_consume(callback,
+                              queue='hello',
+                              no_ack=True)
 
-    print(' [*] Waiting for messages. To exit press CTRL+C')
-    channel.start_consuming()
+        print(' [*] Waiting for messages. To exit press CTRL+C')
+        channel.start_consuming()
+
+
 
     def __init__(self):
         print("init Merge")
